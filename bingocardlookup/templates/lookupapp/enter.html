@@ -1,0 +1,15 @@
+{% if bingocard %}
+  Your openid: {{ bingocard.openid }}
+  <br/>
+  Your grid: {{ bingocard.grid }}
+  <br/>
+  <form action="/bingocardlookup/decode/" method="get">
+  Enter challenge string: <input type="text" name="challenge"/> <input type="submit"/>
+  </form>
+{% else %}
+  No grid found for your openid.
+{% endif %}
+{% if decodedSequence %}
+  <br/>
+  RESPONSE: {{ decodedSequence }}
+{% endif %}
