@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from django.template import Context, loader
 from django.shortcuts import render_to_response
 from lookupapp.models import BingoCard
+import parseBingoCard
 
 def index(request):
     return HttpResponse("Allo, World.")
@@ -15,8 +16,7 @@ def enter(request):
 
 def decode(request):
     
-    decodedSequence = request.GET['challenge']    
-
-
-    return render_to_response('lookupapp/enter.html', {'decodedSequence':decodedSequence})
-
+    challenge = request.GET['challenge']    
+    decodedSequence = parseBingoCard.decode(challenge)
+    print(decodedSequence)
+    return HttpResponse('{"response":'+ str(decodedSequence) +'}')

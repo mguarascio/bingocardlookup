@@ -4,12 +4,24 @@
   Your grid: {{ bingocard.grid }}
   <br/>
   <form action="/bingocardlookup/decode/" method="get">
-  Enter challenge string: <input type="text" name="challenge"/> <input type="submit"/>
+  Enter challenge string: <input type="text" id="challenge" name="challenge"/> 
+                          <input type="button" id="submitChallenge" value="Submit"/>
+  <p>
+  <div id="response"></div>
   </form>
 {% else %}
   No grid found for your openid.
 {% endif %}
-{% if decodedSequence %}
-  <br/>
-  RESPONSE: {{ decodedSequence }}
-{% endif %}
+
+<script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+<script>
+$(document).ready(function(){
+   $('#submitChallenge').click(function(){    
+	$.getJSON('/bingocardlookup/decode/',
+                  { challenge : $('#challenge').val() },
+                  function(data){
+           		$('#response').text("Response is: " + data.response);
+        	  });
+   });   
+});
+</script>
