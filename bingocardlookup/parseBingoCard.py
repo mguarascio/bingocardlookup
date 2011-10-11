@@ -5,12 +5,13 @@ def parseChallengeString(rawInput):
     import re
     return [re.findall('[A-Z]',rawInput),re.findall('[\d]',rawInput)]
 
-def decode(rawInput):
+def decode(rawInput, userDatagrid):
     parsedArrays = parseChallengeString(rawInput)
-    return [datagrid[int(parsedArrays[1][i])-1][yaxis[parsedArrays[0][i]]] for i in range(len(parsedArrays[0]))]	
+    print userDatagrid
+    return [userDatagrid[int(parsedArrays[1][i])-1][yaxis[parsedArrays[0][i]]] for i in range(len(parsedArrays[0]))]	
 
 
 if __name__ == "__main__":
-        param = "[A4][B2][C3]"
+        param = "[A4] [B2] [C3]"
         parsedArrays = parseChallengeString(param)
         print [datagrid[int(parsedArrays[1][i])-1][yaxis[parsedArrays[0][i]]] for i in range(len(parsedArrays[0]))]
