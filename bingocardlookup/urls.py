@@ -1,7 +1,8 @@
 from django.conf.urls.defaults import patterns, include, url
-
-# Uncomment the next two lines to enable the admin:
+import settings
 from django.contrib import admin
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+
 admin.autodiscover()
 
 urlpatterns = patterns('',
@@ -11,10 +12,16 @@ urlpatterns = patterns('',
 
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
-
-    (r'^bingocardlookup/$', 'lookupapp.views.index'),
+    
+    (r'^bingocardlookup/$', 'lookupapp.views.enter'),
+    (r'^bingocardlookup/openid/', include('django_openid_auth.urls')),
     (r'^bingocardlookup/enter/$', 'lookupapp.views.enter'),
-    (r'^bingocardlookup/decode/$', 'lookupapp.views.decode'),    
+    (r'^bingocardlookup/register/$', 'lookupapp.views.register'),
+    (r'^bingocardlookup/decode/$', 'lookupapp.views.decode'),
+    (r'^bingocardlookup/logout/$', 'lookupapp.views.logout'),    
     # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),
 )
+
+#this is only for development...
+urlpatterns += staticfiles_urlpatterns()
