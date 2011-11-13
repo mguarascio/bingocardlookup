@@ -1,31 +1,18 @@
-<style type="text/css">
-body{
-    font-size: 16px;
-}
+{% extends "lookupapp/base.html" %}
 
-#challenge {
-    width:300px;
-}
+{% block title %} Decode String {% endblock %}
 
-input[type="text"] {
-    border: 1px solid #CCC;
-    font-size: 1.75em;
-}
+{% block pageheader %} Translate your challenge String here. {% endblock %}
 
-P.entry {
-    margin-left: auto;
-    margin-right: auto;
-    font-size: 1.75em;
-    width: 30em
-}
-</style>
+{% block content %}
 
 {% if bingocard %}
-  Your openid: {{ bingocard.openid }}<input type="hidden" id="id" name="id" value="{{ bingocard.openid }}"/>
+  Your openid: {{ bingocard.openid }}
   <br/>
   Your grid: {{ bingocard.grid }}
   <br/>
 <p class="entry">
+  <input type="hidden" id="id" name="id" value="{{ id }}"/>
   Enter challenge string: <input type="text" id="challenge" name="challenge"/> 
                           <input type="button" id="submitChallenge" value="Submit"/>
 </p>
@@ -48,3 +35,5 @@ $(document).ready(function(){
    });   
 });
 </script>
+
+{% endblock %}

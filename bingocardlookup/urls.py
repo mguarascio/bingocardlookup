@@ -18,7 +18,8 @@ urlpatterns = patterns('',
     (r'^bingocardlookup/enter/$', 'lookupapp.views.enter'),
     (r'^bingocardlookup/register/$', 'lookupapp.views.register'),
     (r'^bingocardlookup/decode/$', 'lookupapp.views.decode'),
-    (r'^bingocardlookup/logout/$', 'lookupapp.views.logout'),    
+    (r'^bingocardlookup/logout/$', 'lookupapp.views.logout'), 
+    (r'^bingocardlookup/editcard/$', 'lookupapp.views.editcard'),   
     # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),
 )

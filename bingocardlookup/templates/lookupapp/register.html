@@ -1,44 +1,16 @@
-<style type="text/css">
-body{
-    font-size: 16px;
-}
+{% extends "lookupapp/base.html" %}
 
-#challenge {
-    width:300px;
-}
+{% block title%} Enter Your Grid {% endblock %}
 
-input[type="text"] {
-    font-size: 1.75em;
-}
+{% block pageheader %} {% if bingocard %} Edit {% else %} Register {% endif %} your grid card. {% endblock %}
 
-.textborder {
-    border: 1px solid #CCC;
-}
+{% block content %}
 
-P.entry {
-    margin-left: auto;
-    margin-right: auto;
-    font-size: 1.75em;
-    width: 30em
-}
-
-P.grid table tbody tr td input {
-    text-align: center;
-}
-
-.error {
-    border-color: red;
-}
-
-</style>
-
-  Welcome, {{ username }} with userid = {{ userid }}
   <br/>
-  Your id: {{ id }}
-  <br/>
+<form id="form" action="" method="post">{% csrf_token %}
 <p class="entry grid">
   Enter bingo card grid:
-<table id="grid">
+<table id="gridtable">
   <thead>
     <tr>
     <th></th>
@@ -128,25 +100,58 @@ P.grid table tbody tr td input {
   </tr>
   </tbody>
 </table>
+{% if bingocard %} 
+  <input type="hidden" name="grid" id="grid" value="{{ bingocard.grid }}" /> 
+{% else %}
+  <input type="hidden" name="grid" id="grid"/>
+{% endif %}
+<input type="hidden" name="openid" id="openid" value="{{ id }}"/>
 <input type="button" id="save" value="Save"/>
 <span id="alert" style="font-color:red;"></span>
 </p>
-  <p>
-  <div id="response"></div>
-<a href="logout">Logout</a>
+</form>
+
+{{ bingocard.grid }}
+
 <script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
 <script>
 $(document).ready(function(){
+
+   //If a grid is present in the session, we're in edit mode - so populate the input elements. 
+   if($("#grid").val())
+   { 
+     var trs = $("#gridtable tbody tr");             
+     var grid = $("#grid").val();                    
+
+     //for each row in the grid, extract the inner array and set the input values
+     $.each(eval(grid), function(index, value){      
+              var tr = trs[index];
+              $.each(eval(value), function(ind, val){
+                        $(tr).find(":text")[ind].value = val;
+                  });
+           });
+   }
+
+   //On save, validate and submit string value of grid.
    $('#save').click(function(){ 
         $(".error").removeClass("error");
         $("#alert").text("");
    
-	if($("#grid :text[value='']").length)
+	if($("#gridtable :text[value='']").length)
 	{
-	   $("#grid :text[value='']").addClass("error");
+	   $("#gridtable :text[value='']").addClass("error");
            $("#alert").text("All cells are required.");
            return;
 	}
+        else
+        {
+           var rowgrid = $("#gridtable tbody tr").map(function(){
+                               return "["+$(this).find(":text").map(function(){ return "'"+this.value+"'"; }).get().toString()+"]";
+                           });
+           $("#grid").val("["+rowgrid.get()+"]");
+           $("#form").submit();
+        }
    });   
 });
 </script>
+{% endblock %}

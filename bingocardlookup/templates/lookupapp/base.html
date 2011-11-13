@@ -1,0 +1,47 @@
+<html>
+<head>
+<title>{% block title %}BingoCard Lookup{% endblock %}</title>
+<style type="text/css">
+body{
+    font-size: 16px;
+}
+
+#challenge {
+    width:300px;
+}
+
+input[type="text"] {
+    font-size: 1.75em;
+}
+
+.textborder {
+    border: 1px solid #CCC;
+    text-align: center;
+}
+
+P.entry {
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.75em;
+    width: 30em
+}
+
+.error {
+    border-color: red;
+}
+</style>
+</head>
+<body>
+<div id="nav">
+{% block nav %}
+{{ user.get_full_name }} | <a href="/bingocardlookup/enter">Decode Challenge</a> | <a href="/bingocardlookup/editcard">Edit Card</a> | <a href="/bingocardlookup/logout">Logout</a>
+{% endblock %}
+</div>
+<div id="pageheader">
+<h2>{% block pageheader %} {% endblock %}</h2>
+</div>
+<div id="content">
+{% block content %}{% endblock %}
+</div>
+</body>
+</html>
