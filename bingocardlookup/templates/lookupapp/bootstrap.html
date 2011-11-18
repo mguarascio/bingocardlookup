@@ -1,15 +1,15 @@
-{% extends "lookupapp/base.html" %}
-
-{% block title%} Enter Your Grid {% endblock %}
-
-{% block pageheader %} {% if bingocard %} Edit {% else %} Register {% endif %} your grid card. {% endblock %}
-
-{% block content %}
-
-  <br/>
-<form id="form" action="" method="post">{% csrf_token %}
-<p class="entry grid">
-<table id="gridtable" class="center">
+<html>
+<head>
+<link rel="stylesheet" href="http://twitter.github.com/bootstrap/1.4.0/bootstrap.min.css">
+</head>
+<body>
+ <div class="container">
+  
+    Enter challenge string: <input type="text" id="challenge" name="challenge"/> 
+                          <input type="button" id="submitChallenge" value="Submit"/>
+  
+  Enter bingo card grid:
+<table id="gridtable">
   <thead>
     <tr>
     <th></th>
@@ -99,56 +99,7 @@
   </tr>
   </tbody>
 </table>
-{% if bingocard %} 
-  <input type="hidden" name="grid" id="grid" value="{{ bingocard.grid }}" /> 
-{% else %}
-  <input type="hidden" name="grid" id="grid"/>
-{% endif %}
-<input type="hidden" name="openid" id="openid" value="{{ id }}"/>
-<input type="button" class="btn large primary" id="save" value="Save" style="width: 150px; height: 50px; float:right; margin-right: 3px;"/>
-<span id="alert" class="error"></span>
-</p>
-</form>
 
-<script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
-<script>
-$(document).ready(function(){
-
-   //If a grid is present in the session, we're in edit mode - so populate the input elements. 
-   if($("#grid").val())
-   { 
-     var trs = $("#gridtable tbody tr");             
-     var grid = $("#grid").val();                    
-
-     //for each row in the grid, extract the inner array and set the input values
-     $.each(eval(grid), function(index, value){      
-              var tr = trs[index];
-              $.each(eval(value), function(ind, val){
-                        $(tr).find(":text")[ind].value = val;
-                  });
-           });
-   }
-
-   //On save, validate and submit string value of grid.
-   $('#save').click(function(){ 
-        $(".error").removeClass("error");
-        $("#alert").text("");
-   
-	if($("#gridtable :text[value='']").length)
-	{
-	   $("#gridtable :text[value='']").addClass("error");
-           $("#alert").text("All cells are required.").addClass("error");
-           return;
-	}
-        else
-        {
-           var rowgrid = $("#gridtable tbody tr").map(function(){
-                               return "["+$(this).find(":text").map(function(){ return "'"+this.value+"'"; }).get().toString()+"]";
-                           });
-           $("#grid").val("["+rowgrid.get()+"]");
-           $("#form").submit();
-        }
-   });   
-});
-</script>
-{% endblock %}
+ </div>
+<body>
+</html>

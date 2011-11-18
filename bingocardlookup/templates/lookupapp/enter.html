@@ -2,19 +2,16 @@
 
 {% block title %} Decode String {% endblock %}
 
-{% block pageheader %} Translate your challenge String here. {% endblock %}
+{% block pageheader %} <h2>Decode your challenge String here.</h2> {% endblock %}
 
 {% block content %}
 
 {% if bingocard %}
-  Your openid: {{ bingocard.openid }}
-  <br/>
-  Your grid: {{ bingocard.grid }}
   <br/>
 <p class="entry">
   <input type="hidden" id="id" name="id" value="{{ id }}"/>
-  Enter challenge string: <input type="text" id="challenge" name="challenge"/> 
-                          <input type="button" id="submitChallenge" value="Submit"/>
+  Enter challenge string: <input type="text" class="biginput" id="challenge" name="challenge" style="vertical-align: middle"/> 
+                          <input type="button" class="btn large primary" id="submitChallenge" value="Submit" style="vertical-align: middle; width: 150px; height: 50px"/>
 </p>
   <p>
   <div id="response"></div>
