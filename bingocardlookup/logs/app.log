@@ -1,0 +1,380 @@
+test logger
+request.user.id: 3 
+(0.001) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = aa2d9619fd84e748a6bb8a855e96342e  AND "django_session"."expire_date" > 2011-12-04 13:14:01.227338 ); args=('aa2d9619fd84e748a6bb8a855e96342e', u'2011-12-04 13:14:01.227338')
+(0.000) SELECT "auth_user"."id", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."password", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."is_superuser", "auth_user"."last_login", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 3 ; args=(3,)
+(0.000) SELECT "django_openid_auth_useropenid"."id", "django_openid_auth_useropenid"."user_id", "django_openid_auth_useropenid"."claimed_id", "django_openid_auth_useropenid"."display_id" FROM "django_openid_auth_useropenid" WHERE "django_openid_auth_useropenid"."user_id" = 3 ; args=(3,)
+(0.001) SELECT "lookupapp_bingocard"."id", "lookupapp_bingocard"."openid", "lookupapp_bingocard"."grid" FROM "lookupapp_bingocard" WHERE "lookupapp_bingocard"."openid" = https://www.google.com/accounts/o8/id?id=AItOawk0vXcoExRGa5MRSVgG12v-nQ5SLju9UJI ; args=(u'https://www.google.com/accounts/o8/id?id=AItOawk0vXcoExRGa5MRSVgG12v-nQ5SLju9UJI',)
+(0.001) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = aa2d9619fd84e748a6bb8a855e96342e  AND "django_session"."expire_date" > 2011-12-04 13:14:03.848956 ); args=('aa2d9619fd84e748a6bb8a855e96342e', u'2011-12-04 13:14:03.848956')
+(0.000) SELECT "auth_user"."id", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."password", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."is_superuser", "auth_user"."last_login", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 3 ; args=(3,)
+request.user.id: 3 
+request.method: GET
+(0.000) SELECT "django_openid_auth_useropenid"."id", "django_openid_auth_useropenid"."user_id", "django_openid_auth_useropenid"."claimed_id", "django_openid_auth_useropenid"."display_id" FROM "django_openid_auth_useropenid" WHERE "django_openid_auth_useropenid"."user_id" = 3 ; args=(3,)
+userOpenId.claimed_id: https://www.google.com/accounts/o8/id?id=AItOawk0vXcoExRGa5MRSVgG12v-nQ5SLju9UJI
+(0.000) SELECT "lookupapp_bingocard"."id", "lookupapp_bingocard"."openid", "lookupapp_bingocard"."grid" FROM "lookupapp_bingocard" WHERE "lookupapp_bingocard"."openid" = https://www.google.com/accounts/o8/id?id=AItOawk0vXcoExRGa5MRSVgG12v-nQ5SLju9UJI ; args=(u'https://www.google.com/accounts/o8/id?id=AItOawk0vXcoExRGa5MRSVgG12v-nQ5SLju9UJI',)
+logout called with request: <WSGIRequest
+GET:<QueryDict: {}>,
+POST:<QueryDict: {}>,
+COOKIES:{'csrftoken': '369dbad5f4f667c6850adb7004ec6a55',
+ 'openid_prov': '0',
+ 'sessionid': 'aa2d9619fd84e748a6bb8a855e96342e'},
+META:{'ANT_HOME': '/Applications/oc4j_extended_101340/ant',
+ 'Apple_PubSub_Socket_Render': '/tmp/launch-u1wC0g/Render',
+ 'COMMAND_MODE': 'unix2003',
+ 'CONTENT_LENGTH': '',
+ 'CONTENT_TYPE': 'text/plain',
+ 'CSRF_COOKIE': '369dbad5f4f667c6850adb7004ec6a55',
+ 'DISPLAY': '/tmp/launch-NEF8xk/org.x:0',
+ 'DJANGO_SETTINGS_MODULE': 'bingocardlookup.settings',
+ 'GATEWAY_INTERFACE': 'CGI/1.1',
+ 'HADOOP_HOME': '/Applications/hadoop-0.20.2',
+ 'HOME': '/Users/mike',
+ 'HTTP_ACCEPT': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+ 'HTTP_ACCEPT_CHARSET': 'ISO-8859-1,utf-8;q=0.7,*;q=0.3',
+ 'HTTP_ACCEPT_ENCODING': 'gzip,deflate,sdch',
+ 'HTTP_ACCEPT_LANGUAGE': 'en-US,en;q=0.8',
+ 'HTTP_CONNECTION': 'keep-alive',
+ 'HTTP_COOKIE': 'openid_prov=0; sessionid=aa2d9619fd84e748a6bb8a855e96342e; csrftoken=369dbad5f4f667c6850adb7004ec6a55',
+ 'HTTP_HOST': 'localhost:8000',
+ 'HTTP_REFERER': 'http://localhost:8000/bingocardlookup/editcard/',
+ 'HTTP_USER_AGENT': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_8) AppleWebKit/535.2 (KHTML, like Gecko) Chrome/15.0.874.121 Safari/535.2',
+ 'J2EE_HOME': '/Applications/oc4j_extended_101340/j2ee/home',
+ 'JAVA_HOME': '/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home',
+ 'LANG': 'en_US.UTF-8',
+ 'LOGNAME': 'mike',
+ 'OLDPWD': '/Users/mike/Documents/bingocardlookup',
+ 'ORACLE_HOME': '/Applications/oc4j_extended_101340',
+ 'PATH': '/usr/bin:/opt/local/bin:/opt/local/sbin:/Applications/oc4j_extended_101340/bin:/Applications/oc4j_extended_101340/ant/bin:/usr/local/mysql/bin:/Applications/hadoop-0.20.2/bin:/Applications/pig-0.7.0/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:/usr/X11/bin',
+ 'PATH_INFO': u'/bingocardlookup/logout/',
+ 'PIG_HOME': '/Applications/pig-0.7.0',
+ 'PWD': '/Users/mike/Documents/bingocardlookup/bingocardlookup',
+ 'QUERY_STRING': '',
+ 'REMOTE_ADDR': '127.0.0.1',
+ 'REMOTE_HOST': '',
+ 'REQUEST_METHOD': 'GET',
+ 'RUN_MAIN': 'true',
+ 'SCRIPT_NAME': u'',
+ 'SERVER_NAME': 'localhost',
+ 'SERVER_PORT': '8000',
+ 'SERVER_PROTOCOL': 'HTTP/1.1',
+ 'SERVER_SOFTWARE': 'WSGIServer/0.1 Python/2.6.1',
+ 'SHELL': '/bin/bash',
+ 'SHLVL': '1',
+ 'SSH_AUTH_SOCK': '/tmp/launch-mJw5zg/Listeners',
+ 'TERM': 'xterm-color',
+ 'TERM_PROGRAM': 'Apple_Terminal',
+ 'TERM_PROGRAM_VERSION': '273.1',
+ 'TMPDIR': '/var/folders/L+/L+AWT8FCEjSzxx+iRjYqSU+++TI/-Tmp-/',
+ 'TZ': 'America/Chicago',
+ 'USER': 'mike',
+ 'VERSIONER_PYTHON_PREFER_32_BIT': 'no',
+ 'VERSIONER_PYTHON_VERSION': '2.6',
+ '_': '/usr/bin/python',
+ '__CF_USER_TEXT_ENCODING': '0x1F5:0:0',
+ 'wsgi.errors': <open file '<stderr>', mode 'w' at 0x100416140>,
+ 'wsgi.file_wrapper': <class 'django.core.servers.basehttp.FileWrapper'>,
+ 'wsgi.input': <socket._fileobject object at 0x101d048c0>,
+ 'wsgi.multiprocess': False,
+ 'wsgi.multithread': True,
+ 'wsgi.run_once': False,
+ 'wsgi.url_scheme': 'http',
+ 'wsgi.version': (1, 0)}> 
+(0.001) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = aa2d9619fd84e748a6bb8a855e96342e  AND "django_session"."expire_date" > 2011-12-04 13:14:05.725317 ); args=('aa2d9619fd84e748a6bb8a855e96342e', u'2011-12-04 13:14:05.725317')
+(0.000) SELECT "auth_user"."id", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."password", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."is_superuser", "auth_user"."last_login", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 3 ; args=(3,)
+(0.000) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE "django_session"."session_key" = aa2d9619fd84e748a6bb8a855e96342e ; args=('aa2d9619fd84e748a6bb8a855e96342e',)
+(0.000) DELETE FROM "django_session" WHERE "session_key" IN (aa2d9619fd84e748a6bb8a855e96342e); args=(u'aa2d9619fd84e748a6bb8a855e96342e',)
+(0.000) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE "django_session"."session_key" = 0495ad56c830516d8feba81333d353f1 ; args=('0495ad56c830516d8feba81333d353f1',)
+(0.000) INSERT INTO "django_session" ("session_key", "session_data", "expire_date") VALUES (0495ad56c830516d8feba81333d353f1, OGEyM2I0OTBhM2RiYjdiOTgwODI4ZjgwODlhYmU0MTc0ZjU2OTEyYzqAAn1xAS4=
+, 2011-12-18 13:14:05.734817); args=('0495ad56c830516d8feba81333d353f1', 'OGEyM2I0OTBhM2RiYjdiOTgwODI4ZjgwODlhYmU0MTc0ZjU2OTEyYzqAAn1xAS4=\n', u'2011-12-18 13:14:05.734817')
+(0.000) SELECT (1) AS "a" FROM "django_session" WHERE "django_session"."session_key" = 0495ad56c830516d8feba81333d353f1  LIMIT 1; args=('0495ad56c830516d8feba81333d353f1',)
+(0.001) UPDATE "django_session" SET "session_data" = OGEyM2I0OTBhM2RiYjdiOTgwODI4ZjgwODlhYmU0MTc0ZjU2OTEyYzqAAn1xAS4=
+, "expire_date" = 2011-12-18 13:14:05.747923 WHERE "django_session"."session_key" = 0495ad56c830516d8feba81333d353f1 ; args=('OGEyM2I0OTBhM2RiYjdiOTgwODI4ZjgwODlhYmU0MTc0ZjU2OTEyYzqAAn1xAS4=\n', u'2011-12-18 13:14:05.747923', '0495ad56c830516d8feba81333d353f1')
+(0.001) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = 0495ad56c830516d8feba81333d353f1  AND "django_session"."expire_date" > 2011-12-04 13:14:05.757228 ); args=('0495ad56c830516d8feba81333d353f1', u'2011-12-04 13:14:05.757228')
+(0.001) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = 0495ad56c830516d8feba81333d353f1  AND "django_session"."expire_date" > 2011-12-04 14:14:57.474279 ); args=('0495ad56c830516d8feba81333d353f1', u'2011-12-04 14:14:57.474279')
+(0.001) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = 0495ad56c830516d8feba81333d353f1  AND "django_session"."expire_date" > 2011-12-04 14:14:59.036665 ); args=('0495ad56c830516d8feba81333d353f1', u'2011-12-04 14:14:59.036665')
+(0.000) SELECT "django_openid_auth_association"."id", "django_openid_auth_association"."server_url", "django_openid_auth_association"."handle", "django_openid_auth_association"."secret", "django_openid_auth_association"."issued", "django_openid_auth_association"."lifetime", "django_openid_auth_association"."assoc_type" FROM "django_openid_auth_association" WHERE "django_openid_auth_association"."server_url" = https://www.google.com/accounts/o8/ud ; args=('https://www.google.com/accounts/o8/ud',)
+(0.000) SELECT (1) AS "a" FROM "django_session" WHERE "django_session"."session_key" = 0495ad56c830516d8feba81333d353f1  LIMIT 1; args=('0495ad56c830516d8feba81333d353f1',)
+(0.000) UPDATE "django_session" SET "session_data" = YWI5MTQzOGFlYTdjMjZjNTc0Y2U5OWU2ZGYxMTQzNjg4ZTVhOWI1ZDqAAn1xAVUGT1BFTklEcQJ9
+cQMoVSFfeWFkaXNfc2VydmljZXNfX29wZW5pZF9jb25zdW1lcl9xBGNvcGVuaWQueWFkaXMubWFu
+YWdlcgpZYWRpc1NlcnZpY2VNYW5hZ2VyCnEFKYFxBn1xByhVCHNlcnZpY2VzcQhdcQlVCXlhZGlz
+X3VybHEKVSVodHRwczovL3d3dy5nb29nbGUuY29tL2FjY291bnRzL284L2lkcQtVDHN0YXJ0aW5n
+X3VybHEMWCUAAABodHRwczovL3d3dy5nb29nbGUuY29tL2FjY291bnRzL284L2lkcQ1VC3Nlc3Np
+b25fa2V5cQ5oBFUIX2N1cnJlbnRxD2NvcGVuaWQuY29uc3VtZXIuZGlzY292ZXIKT3BlbklEU2Vy
+dmljZUVuZHBvaW50CnEQKYFxEX1xEihVCmNsYWltZWRfaWRxE05VEmRpc3BsYXlfaWRlbnRpZmll
+cnEUTlUKc2VydmVyX3VybHEVVSVodHRwczovL3d3dy5nb29nbGUuY29tL2FjY291bnRzL284L3Vk
+cRZVC2Nhbm9uaWNhbElEcRdOVQhsb2NhbF9pZHEYTlUJdHlwZV91cmlzcRldcRooVSdodHRwOi8v
+c3BlY3Mub3BlbmlkLm5ldC9hdXRoLzIuMC9zZXJ2ZXJxG1UcaHR0cDovL29wZW5pZC5uZXQvc3J2
+L2F4LzEuMHEcVTRodHRwOi8vc3BlY3Mub3BlbmlkLm5ldC9leHRlbnNpb25zL3VpLzEuMC9tb2Rl
+L3BvcHVwcR1VLmh0dHA6Ly9zcGVjcy5vcGVuaWQubmV0L2V4dGVuc2lvbnMvdWkvMS4wL2ljb25x
+HlUraHR0cDovL3NwZWNzLm9wZW5pZC5uZXQvZXh0ZW5zaW9ucy9wYXBlLzEuMHEfZVUKdXNlZF95
+YWRpc3EgiHVidWJVG19vcGVuaWRfY29uc3VtZXJfbGFzdF90b2tlbnEhaBF1cy4=
+, "expire_date" = 2011-12-18 14:14:59.670524 WHERE "django_session"."session_key" = 0495ad56c830516d8feba81333d353f1 ; args=('YWI5MTQzOGFlYTdjMjZjNTc0Y2U5OWU2ZGYxMTQzNjg4ZTVhOWI1ZDqAAn1xAVUGT1BFTklEcQJ9\ncQMoVSFfeWFkaXNfc2VydmljZXNfX29wZW5pZF9jb25zdW1lcl9xBGNvcGVuaWQueWFkaXMubWFu\nYWdlcgpZYWRpc1NlcnZpY2VNYW5hZ2VyCnEFKYFxBn1xByhVCHNlcnZpY2VzcQhdcQlVCXlhZGlz\nX3VybHEKVSVodHRwczovL3d3dy5nb29nbGUuY29tL2FjY291bnRzL284L2lkcQtVDHN0YXJ0aW5n\nX3VybHEMWCUAAABodHRwczovL3d3dy5nb29nbGUuY29tL2FjY291bnRzL284L2lkcQ1VC3Nlc3Np\nb25fa2V5cQ5oBFUIX2N1cnJlbnRxD2NvcGVuaWQuY29uc3VtZXIuZGlzY292ZXIKT3BlbklEU2Vy\ndmljZUVuZHBvaW50CnEQKYFxEX1xEihVCmNsYWltZWRfaWRxE05VEmRpc3BsYXlfaWRlbnRpZmll\ncnEUTlUKc2VydmVyX3VybHEVVSVodHRwczovL3d3dy5nb29nbGUuY29tL2FjY291bnRzL284L3Vk\ncRZVC2Nhbm9uaWNhbElEcRdOVQhsb2NhbF9pZHEYTlUJdHlwZV91cmlzcRldcRooVSdodHRwOi8v\nc3BlY3Mub3BlbmlkLm5ldC9hdXRoLzIuMC9zZXJ2ZXJxG1UcaHR0cDovL29wZW5pZC5uZXQvc3J2\nL2F4LzEuMHEcVTRodHRwOi8vc3BlY3Mub3BlbmlkLm5ldC9leHRlbnNpb25zL3VpLzEuMC9tb2Rl\nL3BvcHVwcR1VLmh0dHA6Ly9zcGVjcy5vcGVuaWQubmV0L2V4dGVuc2lvbnMvdWkvMS4wL2ljb25x\nHlUraHR0cDovL3NwZWNzLm9wZW5pZC5uZXQvZXh0ZW5zaW9ucy9wYXBlLzEuMHEfZVUKdXNlZF95\nYWRpc3EgiHVidWJVG19vcGVuaWRfY29uc3VtZXJfbGFzdF90b2tlbnEhaBF1cy4=\n', u'2011-12-18 14:14:59.670524', '0495ad56c830516d8feba81333d353f1')
+(0.001) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = 0495ad56c830516d8feba81333d353f1  AND "django_session"."expire_date" > 2011-12-04 14:15:00.172078 ); args=('0495ad56c830516d8feba81333d353f1', u'2011-12-04 14:15:00.172078')
+(0.000) SELECT "django_openid_auth_association"."id", "django_openid_auth_association"."server_url", "django_openid_auth_association"."handle", "django_openid_auth_association"."secret", "django_openid_auth_association"."issued", "django_openid_auth_association"."lifetime", "django_openid_auth_association"."assoc_type" FROM "django_openid_auth_association" WHERE ("django_openid_auth_association"."handle" = AMlYA9WKQkivc13rrjuI0pBWfwK-rtx-p1yEYmUISI0S_3QC-52Zej9T  AND "django_openid_auth_association"."server_url" = https://www.google.com/accounts/o8/ud ); args=(u'AMlYA9WKQkivc13rrjuI0pBWfwK-rtx-p1yEYmUISI0S_3QC-52Zej9T', 'https://www.google.com/accounts/o8/ud')
+(0.000) SELECT "django_openid_auth_nonce"."id", "django_openid_auth_nonce"."server_url", "django_openid_auth_nonce"."timestamp", "django_openid_auth_nonce"."salt" FROM "django_openid_auth_nonce" WHERE ("django_openid_auth_nonce"."salt" = OifM-snQueXl-w  AND "django_openid_auth_nonce"."timestamp" = 1323029699  AND "django_openid_auth_nonce"."server_url" = https://www.google.com/accounts/o8/ud ); args=(u'OifM-snQueXl-w', 1323029699, 'https://www.google.com/accounts/o8/ud')
+(0.000) INSERT INTO "django_openid_auth_nonce" ("server_url", "timestamp", "salt") VALUES (https://www.google.com/accounts/o8/ud, 1323029699, OifM-snQueXl-w); args=('https://www.google.com/accounts/o8/ud', 1323029699, u'OifM-snQueXl-w')
+(0.000) SELECT "django_openid_auth_useropenid"."id", "django_openid_auth_useropenid"."user_id", "django_openid_auth_useropenid"."claimed_id", "django_openid_auth_useropenid"."display_id" FROM "django_openid_auth_useropenid" WHERE "django_openid_auth_useropenid"."claimed_id" = https://www.google.com/accounts/o8/id?id=AItOawk0vXcoExRGa5MRSVgG12v-nQ5SLju9UJI ; args=('https://www.google.com/accounts/o8/id?id=AItOawk0vXcoExRGa5MRSVgG12v-nQ5SLju9UJI',)
+(0.000) SELECT "auth_user"."id", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."password", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."is_superuser", "auth_user"."last_login", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 3 ; args=(3,)
+(0.000) SELECT (1) AS "a" FROM "auth_user" WHERE "auth_user"."id" = 3  LIMIT 1; args=(3,)
+(0.001) UPDATE "auth_user" SET "username" = openiduser, "first_name" = Michael, "last_name" = Guarascio, "email" = michael.guarascio@gmail.com, "password" = !, "is_staff" = False, "is_active" = True, "is_superuser" = False, "last_login" = 2011-12-04 12:39:54.618325, "date_joined" = 2011-10-22 12:23:45.988709 WHERE "auth_user"."id" = 3 ; args=(u'openiduser', u'Michael', u'Guarascio', u'michael.guarascio@gmail.com', u'!', False, True, False, u'2011-12-04 12:39:54.618325', u'2011-10-22 12:23:45.988709', 3)
+(0.000) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE "django_session"."session_key" = 9c342f4b3e86dd3b91ed5182a7a6d90e ; args=('9c342f4b3e86dd3b91ed5182a7a6d90e',)
+(0.000) INSERT INTO "django_session" ("session_key", "session_data", "expire_date") VALUES (9c342f4b3e86dd3b91ed5182a7a6d90e, MGE1ZThmZjkxNmU4NmEzNzg3YTMwMjZiMGI2N2U5MDMwYmFmYzk5MTqAAn1xAVUGT1BFTklEcQJ9
+cQNzLg==
+, 2011-12-18 14:15:00.335675); args=('9c342f4b3e86dd3b91ed5182a7a6d90e', 'MGE1ZThmZjkxNmU4NmEzNzg3YTMwMjZiMGI2N2U5MDMwYmFmYzk5MTqAAn1xAVUGT1BFTklEcQJ9\ncQNzLg==\n', u'2011-12-18 14:15:00.335675')
+(0.000) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE "django_session"."session_key" = 0495ad56c830516d8feba81333d353f1 ; args=('0495ad56c830516d8feba81333d353f1',)
+(0.001) DELETE FROM "django_session" WHERE "session_key" IN (0495ad56c830516d8feba81333d353f1); args=(u'0495ad56c830516d8feba81333d353f1',)
+(0.000) SELECT "auth_user"."id", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."password", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."is_superuser", "auth_user"."last_login", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 3 ; args=(3,)
+(0.000) SELECT (1) AS "a" FROM "auth_user" WHERE "auth_user"."id" = 3  LIMIT 1; args=(3,)
+(0.000) UPDATE "auth_user" SET "username" = openiduser, "first_name" = Michael, "last_name" = Guarascio, "email" = michael.guarascio@gmail.com, "password" = !, "is_staff" = False, "is_active" = True, "is_superuser" = False, "last_login" = 2011-12-04 14:15:00.343702, "date_joined" = 2011-10-22 12:23:45.988709 WHERE "auth_user"."id" = 3 ; args=(u'openiduser', u'Michael', u'Guarascio', u'michael.guarascio@gmail.com', u'!', False, True, False, u'2011-12-04 14:15:00.343702', u'2011-10-22 12:23:45.988709', 3)
+(0.000) SELECT (1) AS "a" FROM "django_session" WHERE "django_session"."session_key" = 9c342f4b3e86dd3b91ed5182a7a6d90e  LIMIT 1; args=('9c342f4b3e86dd3b91ed5182a7a6d90e',)
+(0.000) UPDATE "django_session" SET "session_data" = YmM5Njg3YWNmNzUyNThiZThjZjI2MTVlZWZjZTNjYzlmMzk2NWUxNTqAAn1xAShVBk9QRU5JRHEC
+fXEDVRJfYXV0aF91c2VyX2JhY2tlbmRxBFUlZGphbmdvX29wZW5pZF9hdXRoLmF1dGguT3BlbklE
+QmFja2VuZHEFVQ1fYXV0aF91c2VyX2lkcQZLA3Uu
+, "expire_date" = 2011-12-18 14:15:00.348309 WHERE "django_session"."session_key" = 9c342f4b3e86dd3b91ed5182a7a6d90e ; args=('YmM5Njg3YWNmNzUyNThiZThjZjI2MTVlZWZjZTNjYzlmMzk2NWUxNTqAAn1xAShVBk9QRU5JRHEC\nfXEDVRJfYXV0aF91c2VyX2JhY2tlbmRxBFUlZGphbmdvX29wZW5pZF9hdXRoLmF1dGguT3BlbklE\nQmFja2VuZHEFVQ1fYXV0aF91c2VyX2lkcQZLA3Uu\n', u'2011-12-18 14:15:00.348309', '9c342f4b3e86dd3b91ed5182a7a6d90e')
+(0.001) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = 9c342f4b3e86dd3b91ed5182a7a6d90e  AND "django_session"."expire_date" > 2011-12-04 14:15:00.358764 ); args=('9c342f4b3e86dd3b91ed5182a7a6d90e', u'2011-12-04 14:15:00.358764')
+(0.000) SELECT "auth_user"."id", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."password", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."is_superuser", "auth_user"."last_login", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 3 ; args=(3,)
+(0.000) SELECT "django_openid_auth_useropenid"."id", "django_openid_auth_useropenid"."user_id", "django_openid_auth_useropenid"."claimed_id", "django_openid_auth_useropenid"."display_id" FROM "django_openid_auth_useropenid" WHERE "django_openid_auth_useropenid"."user_id" = 3 ; args=(3,)
+(0.000) SELECT "lookupapp_bingocard"."id", "lookupapp_bingocard"."openid", "lookupapp_bingocard"."grid" FROM "lookupapp_bingocard" WHERE "lookupapp_bingocard"."openid" = https://www.google.com/accounts/o8/id?id=AItOawk0vXcoExRGa5MRSVgG12v-nQ5SLju9UJI ; args=(u'https://www.google.com/accounts/o8/id?id=AItOawk0vXcoExRGa5MRSVgG12v-nQ5SLju9UJI',)
+(0.001) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = 9c342f4b3e86dd3b91ed5182a7a6d90e  AND "django_session"."expire_date" > 2011-12-04 14:15:02.331927 ); args=('9c342f4b3e86dd3b91ed5182a7a6d90e', u'2011-12-04 14:15:02.331927')
+(0.000) SELECT "auth_user"."id", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."password", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."is_superuser", "auth_user"."last_login", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 3 ; args=(3,)
+request.user.id: 3 
+request.method: GET
+(0.000) SELECT "django_openid_auth_useropenid"."id", "django_openid_auth_useropenid"."user_id", "django_openid_auth_useropenid"."claimed_id", "django_openid_auth_useropenid"."display_id" FROM "django_openid_auth_useropenid" WHERE "django_openid_auth_useropenid"."user_id" = 3 ; args=(3,)
+userOpenId.claimed_id: https://www.google.com/accounts/o8/id?id=AItOawk0vXcoExRGa5MRSVgG12v-nQ5SLju9UJI
+(0.000) SELECT "lookupapp_bingocard"."id", "lookupapp_bingocard"."openid", "lookupapp_bingocard"."grid" FROM "lookupapp_bingocard" WHERE "lookupapp_bingocard"."openid" = https://www.google.com/accounts/o8/id?id=AItOawk0vXcoExRGa5MRSVgG12v-nQ5SLju9UJI ; args=(u'https://www.google.com/accounts/o8/id?id=AItOawk0vXcoExRGa5MRSVgG12v-nQ5SLju9UJI',)
+(0.001) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = 9c342f4b3e86dd3b91ed5182a7a6d90e  AND "django_session"."expire_date" > 2011-12-04 14:15:06.501221 ); args=('9c342f4b3e86dd3b91ed5182a7a6d90e', u'2011-12-04 14:15:06.501221')
+(0.000) SELECT "auth_user"."id", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."password", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."is_superuser", "auth_user"."last_login", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 3 ; args=(3,)
+request.user.id: 3 
+request.method: POST
+(0.000) SELECT "django_openid_auth_useropenid"."id", "django_openid_auth_useropenid"."user_id", "django_openid_auth_useropenid"."claimed_id", "django_openid_auth_useropenid"."display_id" FROM "django_openid_auth_useropenid" WHERE "django_openid_auth_useropenid"."user_id" = 3 ; args=(3,)
+userOpenId.claimed_id: https://www.google.com/accounts/o8/id?id=AItOawk0vXcoExRGa5MRSVgG12v-nQ5SLju9UJI
+(0.000) SELECT "lookupapp_bingocard"."id", "lookupapp_bingocard"."openid", "lookupapp_bingocard"."grid" FROM "lookupapp_bingocard" WHERE "lookupapp_bingocard"."openid" = https://www.google.com/accounts/o8/id?id=AItOawk0vXcoExRGa5MRSVgG12v-nQ5SLju9UJI ; args=(u'https://www.google.com/accounts/o8/id?id=AItOawk0vXcoExRGa5MRSVgG12v-nQ5SLju9UJI',)
+form isValid?: True 
+form: <tr><th><label for="id_openid">Openid:</label></th><td><input id="id_openid" type="text" name="openid" value="https://www.google.com/accounts/o8/id?id=AItOawk0vXcoExRGa5MRSVgG12v-nQ5SLju9UJI" maxlength="255" /></td></tr>
+<tr><th><label for="id_grid">Grid:</label></th><td><input id="id_grid" type="text" name="grid" value="[[&#39;4&#39;,&#39;V&#39;,&#39;H&#39;,&#39;Y&#39;,&#39;4&#39;,&#39;6&#39;,&#39;P&#39;,&#39;W&#39;,&#39;9&#39;,&#39;Q&#39;],[&#39;T&#39;,&#39;5&#39;,&#39;9&#39;,&#39;3&#39;,&#39;C&#39;,&#39;8&#39;,&#39;9&#39;,&#39;R&#39;,&#39;H&#39;,&#39;H&#39;],[&#39;7&#39;,&#39;J&#39;,&#39;8&#39;,&#39;F&#39;,&#39;2&#39;,&#39;F&#39;,&#39;J&#39;,&#39;1&#39;,&#39;Y&#39;,&#39;0&#39;],[&#39;8&#39;,&#39;Y&#39;,&#39;C&#39;,&#39;2&#39;,&#39;D&#39;,&#39;7&#39;,&#39;P&#39;,&#39;V&#39;,&#39;J&#39;,&#39;8&#39;],[&#39;N&#39;,&#39;F&#39;,&#39;C&#39;,&#39;5&#39;,&#39;0&#39;,&#39;P&#39;,&#39;D&#39;,&#39;X&#39;,&#39;8&#39;,&#39;5&#39;]]" maxlength="300" /></td></tr> 
+(0.000) SELECT (1) AS "a" FROM "lookupapp_bingocard" WHERE "lookupapp_bingocard"."id" = 1  LIMIT 1; args=(1,)
+(0.000) UPDATE "lookupapp_bingocard" SET "openid" = https://www.google.com/accounts/o8/id?id=AItOawk0vXcoExRGa5MRSVgG12v-nQ5SLju9UJI, "grid" = [['4','V','H','Y','4','6','P','W','9','Q'],['T','5','9','3','C','8','9','R','H','H'],['7','J','8','F','2','F','J','1','Y','0'],['8','Y','C','2','D','7','P','V','J','8'],['N','F','C','5','0','P','D','X','8','5']] WHERE "lookupapp_bingocard"."id" = 1 ; args=(u'https://www.google.com/accounts/o8/id?id=AItOawk0vXcoExRGa5MRSVgG12v-nQ5SLju9UJI', u"[['4','V','H','Y','4','6','P','W','9','Q'],['T','5','9','3','C','8','9','R','H','H'],['7','J','8','F','2','F','J','1','Y','0'],['8','Y','C','2','D','7','P','V','J','8'],['N','F','C','5','0','P','D','X','8','5']]", 1)
+(0.001) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = 9c342f4b3e86dd3b91ed5182a7a6d90e  AND "django_session"."expire_date" > 2011-12-04 14:15:06.538740 ); args=('9c342f4b3e86dd3b91ed5182a7a6d90e', u'2011-12-04 14:15:06.538740')
+(0.000) SELECT "auth_user"."id", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."password", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."is_superuser", "auth_user"."last_login", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 3 ; args=(3,)
+(0.000) SELECT "django_openid_auth_useropenid"."id", "django_openid_auth_useropenid"."user_id", "django_openid_auth_useropenid"."claimed_id", "django_openid_auth_useropenid"."display_id" FROM "django_openid_auth_useropenid" WHERE "django_openid_auth_useropenid"."user_id" = 3 ; args=(3,)
+(0.000) SELECT "lookupapp_bingocard"."id", "lookupapp_bingocard"."openid", "lookupapp_bingocard"."grid" FROM "lookupapp_bingocard" WHERE "lookupapp_bingocard"."openid" = https://www.google.com/accounts/o8/id?id=AItOawk0vXcoExRGa5MRSVgG12v-nQ5SLju9UJI ; args=(u'https://www.google.com/accounts/o8/id?id=AItOawk0vXcoExRGa5MRSVgG12v-nQ5SLju9UJI',)
+request.user.id: 3 
+request.method: GET
+userOpenId.claimed_id: https://www.google.com/accounts/o8/id?id=AItOawk0vXcoExRGa5MRSVgG12v-nQ5SLju9UJI
+id not set in session, setting now
+bingocard not set in session, setting now
+request.user.id: 3 
+request.method: GET
+userOpenId.claimed_id: https://www.google.com/accounts/o8/id?id=AItOawk0vXcoExRGa5MRSVgG12v-nQ5SLju9UJI
+request.user.id: 3 
+request.method: GET
+userOpenId.claimed_id: https://www.google.com/accounts/o8/id?id=AItOawk0vXcoExRGa5MRSVgG12v-nQ5SLju9UJI
+request.user.id: 3 
+request.method: GET
+userOpenId.claimed_id: https://www.google.com/accounts/o8/id?id=AItOawk0vXcoExRGa5MRSVgG12v-nQ5SLju9UJI
+request.user.id: 3 
+request.method: GET
+userOpenId.claimed_id: https://www.google.com/accounts/o8/id?id=AItOawk0vXcoExRGa5MRSVgG12v-nQ5SLju9UJI
+request.user.id: 3 
+request.method: GET
+userOpenId.claimed_id: https://www.google.com/accounts/o8/id?id=AItOawk0vXcoExRGa5MRSVgG12v-nQ5SLju9UJI
+request.user.id: 3 
+request.method: GET
+userOpenId.claimed_id: https://www.google.com/accounts/o8/id?id=AItOawk0vXcoExRGa5MRSVgG12v-nQ5SLju9UJI
+request.user.id: 3 
+request.method: GET
+userOpenId.claimed_id: https://www.google.com/accounts/o8/id?id=AItOawk0vXcoExRGa5MRSVgG12v-nQ5SLju9UJI
+request.user.id: 3 
+request.method: GET
+userOpenId.claimed_id: https://www.google.com/accounts/o8/id?id=AItOawk0vXcoExRGa5MRSVgG12v-nQ5SLju9UJI
+request.user.id: 3 
+request.method: GET
+userOpenId.claimed_id: https://www.google.com/accounts/o8/id?id=AItOawk0vXcoExRGa5MRSVgG12v-nQ5SLju9UJI
+request.user.id: 3 
+request.method: GET
+userOpenId.claimed_id: https://www.google.com/accounts/o8/id?id=AItOawk0vXcoExRGa5MRSVgG12v-nQ5SLju9UJI
+requested GET for editcard, redirecting
+request.user.id: 3 
+request.method: GET
+userOpenId.claimed_id: https://www.google.com/accounts/o8/id?id=AItOawk0vXcoExRGa5MRSVgG12v-nQ5SLju9UJI
+requested GET for editcard, redirecting
+request.user.id: 3 
+request.method: GET
+userOpenId.claimed_id: https://www.google.com/accounts/o8/id?id=AItOawk0vXcoExRGa5MRSVgG12v-nQ5SLju9UJI
+requested GET for editcard, redirecting
+request.user.id: 3 
+request.method: GET
+userOpenId.claimed_id: https://www.google.com/accounts/o8/id?id=AItOawk0vXcoExRGa5MRSVgG12v-nQ5SLju9UJI
+requested GET for editcard, redirecting
+request.user.id: 3 
+request.method: GET
+userOpenId.claimed_id: https://www.google.com/accounts/o8/id?id=AItOawk0vXcoExRGa5MRSVgG12v-nQ5SLju9UJI
+requested GET for editcard, redirecting
+request.user.id: 3 
+request.method: GET
+userOpenId.claimed_id: https://www.google.com/accounts/o8/id?id=AItOawk0vXcoExRGa5MRSVgG12v-nQ5SLju9UJI
+requested GET for editcard, redirecting
+request.user.id: 3 
+request.method: GET
+userOpenId.claimed_id: https://www.google.com/accounts/o8/id?id=AItOawk0vXcoExRGa5MRSVgG12v-nQ5SLju9UJI
+requested GET for editcard, redirecting
+request.user.id: 3 
+request.method: GET
+userOpenId.claimed_id: https://www.google.com/accounts/o8/id?id=AItOawk0vXcoExRGa5MRSVgG12v-nQ5SLju9UJI
+requested GET for editcard, redirecting
+request.user.id: 3 
+request.method: GET
+userOpenId.claimed_id: https://www.google.com/accounts/o8/id?id=AItOawk0vXcoExRGa5MRSVgG12v-nQ5SLju9UJI
+requested GET for editcard, redirecting
+request.user.id: 3 
+request.method: GET
+userOpenId.claimed_id: https://www.google.com/accounts/o8/id?id=AItOawk0vXcoExRGa5MRSVgG12v-nQ5SLju9UJI
+requested GET for editcard, redirecting
+request.user.id: 3 
+request.method: GET
+userOpenId.claimed_id: https://www.google.com/accounts/o8/id?id=AItOawk0vXcoExRGa5MRSVgG12v-nQ5SLju9UJI
+requested GET for editcard, redirecting
+request.user.id: 3 
+request.method: GET
+userOpenId.claimed_id: https://www.google.com/accounts/o8/id?id=AItOawk0vXcoExRGa5MRSVgG12v-nQ5SLju9UJI
+https://www.google.com/accounts/o8/id?id=AItOawk0vXcoExRGa5MRSVgG12v-nQ5SLju9UJI
+[['4','V','H','Y','4','6','P','W','9','Q'],['T','5','9','3','C','8','9','R','H','H'],['7','J','8','F','2','F','J','1','Y','0'],['8','Y','C','2','D','7','P','V','J','8'],['N','F','C','5','0','P','D','X','8','5']]
+openid to set: https://www.google.com/accounts/o8/id?id=AItOawk0vXcoExRGa5MRSVgG12v-nQ5SLju9UJI
+bingocard to set: [['4','V','H','Y','4','6','P','W','9','Q'],['T','5','9','3','C','8','9','R','H','H'],['7','J','8','F','2','F','J','1','Y','0'],['8','Y','C','2','D','7','P','V','J','8'],['N','F','C','5','0','P','D','X','8','5']]
+requested GET for editcard, redirecting
+request.user.id: 3 
+request.method: GET
+userOpenId.claimed_id: https://www.google.com/accounts/o8/id?id=AItOawk0vXcoExRGa5MRSVgG12v-nQ5SLju9UJI
+https://www.google.com/accounts/o8/id?id=AItOawk0vXcoExRGa5MRSVgG12v-nQ5SLju9UJI
+[['4','V','H','Y','4','6','P','W','9','Q'],['T','5','9','3','C','8','9','R','H','H'],['7','J','8','F','2','F','J','1','Y','0'],['8','Y','C','2','D','7','P','V','J','8'],['N','F','C','5','0','P','D','X','8','5']]
+openid to set: https://www.google.com/accounts/o8/id?id=AItOawk0vXcoExRGa5MRSVgG12v-nQ5SLju9UJI
+bingocard to set: [['4','V','H','Y','4','6','P','W','9','Q'],['T','5','9','3','C','8','9','R','H','H'],['7','J','8','F','2','F','J','1','Y','0'],['8','Y','C','2','D','7','P','V','J','8'],['N','F','C','5','0','P','D','X','8','5']]
+requested GET for editcard, redirecting
+request.user.id: 3 
+request.method: POST
+userOpenId.claimed_id: https://www.google.com/accounts/o8/id?id=AItOawk0vXcoExRGa5MRSVgG12v-nQ5SLju9UJI
+https://www.google.com/accounts/o8/id?id=AItOawk0vXcoExRGa5MRSVgG12v-nQ5SLju9UJI
+[['4','V','H','Y','4','6','P','W','9','Q'],['T','5','9','3','C','8','9','R','H','H'],['7','J','8','F','2','F','J','1','Y','0'],['8','Y','C','2','D','7','P','V','J','8'],['N','F','C','5','0','P','D','X','8','5']]
+openid to set: https://www.google.com/accounts/o8/id?id=AItOawk0vXcoExRGa5MRSVgG12v-nQ5SLju9UJI
+bingocard to set: [['4','V','H','Y','4','6','P','W','9','Q'],['T','5','9','3','C','8','9','R','H','H'],['7','J','8','F','2','F','J','1','Y','0'],['8','Y','C','2','D','7','P','V','J','8'],['N','F','C','5','0','P','D','X','8','5']]
+form isValid?: True 
+form: <tr><th><label for="id_openid">Openid:</label></th><td><input id="id_openid" type="text" name="openid" value="https://www.google.com/accounts/o8/id?id=AItOawk0vXcoExRGa5MRSVgG12v-nQ5SLju9UJI" maxlength="255" /></td></tr>
+<tr><th><label for="id_grid">Grid:</label></th><td><input id="id_grid" type="text" name="grid" value="[[&#39;4&#39;,&#39;V&#39;,&#39;H&#39;,&#39;Y&#39;,&#39;4&#39;,&#39;6&#39;,&#39;P&#39;,&#39;W&#39;,&#39;9&#39;,&#39;Q&#39;],[&#39;T&#39;,&#39;5&#39;,&#39;9&#39;,&#39;3&#39;,&#39;C&#39;,&#39;8&#39;,&#39;9&#39;,&#39;R&#39;,&#39;H&#39;,&#39;H&#39;],[&#39;7&#39;,&#39;J&#39;,&#39;8&#39;,&#39;F&#39;,&#39;2&#39;,&#39;F&#39;,&#39;J&#39;,&#39;1&#39;,&#39;Y&#39;,&#39;0&#39;],[&#39;8&#39;,&#39;Y&#39;,&#39;C&#39;,&#39;2&#39;,&#39;D&#39;,&#39;7&#39;,&#39;P&#39;,&#39;V&#39;,&#39;J&#39;,&#39;8&#39;],[&#39;N&#39;,&#39;F&#39;,&#39;C&#39;,&#39;5&#39;,&#39;0&#39;,&#39;P&#39;,&#39;D&#39;,&#39;X&#39;,&#39;8&#39;,&#39;5&#39;]]" maxlength="300" /></td></tr> 
+None
+None
+openid to set: https://www.google.com/accounts/o8/id?id=AItOawn2WrmH3oq_XbINNbblytVrrNDKVXS13_w
+bingocard to set: None
+id not set in session, setting now
+bingocard not set in session, setting now
+request.user.id: 5 
+request.method: GET
+userOpenId.claimed_id: https://www.google.com/accounts/o8/id?id=AItOawn2WrmH3oq_XbINNbblytVrrNDKVXS13_w
+bingocard not registered yet
+https://www.google.com/accounts/o8/id?id=AItOawn2WrmH3oq_XbINNbblytVrrNDKVXS13_w
+None
+openid to set: https://www.google.com/accounts/o8/id?id=AItOawn2WrmH3oq_XbINNbblytVrrNDKVXS13_w
+bingocard to set: None
+bingocard not set in session, setting now
+requested GET for editcard, redirecting
+request.user.id: 5 
+request.method: POST
+userOpenId.claimed_id: https://www.google.com/accounts/o8/id?id=AItOawn2WrmH3oq_XbINNbblytVrrNDKVXS13_w
+bingocard not registered yet
+https://www.google.com/accounts/o8/id?id=AItOawn2WrmH3oq_XbINNbblytVrrNDKVXS13_w
+None
+openid to set: https://www.google.com/accounts/o8/id?id=AItOawn2WrmH3oq_XbINNbblytVrrNDKVXS13_w
+bingocard to set: None
+bingocard not set in session, setting now
+form isValid?: True 
+form: <tr><th><label for="id_openid">Openid:</label></th><td><input id="id_openid" type="text" name="openid" value="https://www.google.com/accounts/o8/id?id=AItOawn2WrmH3oq_XbINNbblytVrrNDKVXS13_w" maxlength="255" /></td></tr>
+<tr><th><label for="id_grid">Grid:</label></th><td><input id="id_grid" type="text" name="grid" value="[[&#39;a&#39;,&#39;a&#39;,&#39;a&#39;,&#39;a&#39;,&#39;a&#39;,&#39;a&#39;,&#39;a&#39;,&#39;a&#39;,&#39;a&#39;,&#39;a&#39;],[&#39;b&#39;,&#39;b&#39;,&#39;b&#39;,&#39;b&#39;,&#39;b&#39;,&#39;b&#39;,&#39;b&#39;,&#39;b&#39;,&#39;b&#39;,&#39;b&#39;],[&#39;c&#39;,&#39;c&#39;,&#39;c&#39;,&#39;c&#39;,&#39;c&#39;,&#39;c&#39;,&#39;c&#39;,&#39;c&#39;,&#39;c&#39;,&#39;c&#39;],[&#39;d&#39;,&#39;d&#39;,&#39;d&#39;,&#39;d&#39;,&#39;d&#39;,&#39;d&#39;,&#39;d&#39;,&#39;d&#39;,&#39;d&#39;,&#39;d&#39;],[&#39;e&#39;,&#39;e&#39;,&#39;e&#39;,&#39;e&#39;,&#39;e&#39;,&#39;e&#39;,&#39;e&#39;,&#39;e&#39;,&#39;e&#39;,&#39;e&#39;]]" maxlength="300" /></td></tr> 
+request.user.id: 5 
+request.method: GET
+userOpenId.claimed_id: https://www.google.com/accounts/o8/id?id=AItOawn2WrmH3oq_XbINNbblytVrrNDKVXS13_w
+https://www.google.com/accounts/o8/id?id=AItOawn2WrmH3oq_XbINNbblytVrrNDKVXS13_w
+None
+openid to set: https://www.google.com/accounts/o8/id?id=AItOawn2WrmH3oq_XbINNbblytVrrNDKVXS13_w
+bingocard to set: [['a','a','a','a','a','a','a','a','a','a'],['b','b','b','b','b','b','b','b','b','b'],['c','c','c','c','c','c','c','c','c','c'],['d','d','d','d','d','d','d','d','d','d'],['e','e','e','e','e','e','e','e','e','e']]
+bingocard not set in session, setting now
+requested GET for editcard, redirecting
+logout called with request: <WSGIRequest
+GET:<QueryDict: {}>,
+POST:<QueryDict: {}>,
+COOKIES:{'__utma': '111872281.487524966.1318805672.1318895784.1318898495.4',
+ '__utmz': '111872281.1318805672.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none)',
+ 'csrftoken': '58d123da7f13d95701bebb3c2c91bf4b',
+ 'openid_prov': '0',
+ 'sessionid': '24bd2ba36adb42fa4624f00fded71ec7'},
+META:{'ANT_HOME': '/Applications/oc4j_extended_101340/ant',
+ 'Apple_PubSub_Socket_Render': '/tmp/launch-u1wC0g/Render',
+ 'COMMAND_MODE': 'unix2003',
+ 'CONTENT_LENGTH': '',
+ 'CONTENT_TYPE': 'text/plain',
+ 'CSRF_COOKIE': '58d123da7f13d95701bebb3c2c91bf4b',
+ 'DISPLAY': '/tmp/launch-NEF8xk/org.x:0',
+ 'DJANGO_SETTINGS_MODULE': 'bingocardlookup.settings',
+ 'GATEWAY_INTERFACE': 'CGI/1.1',
+ 'HADOOP_HOME': '/Applications/hadoop-0.20.2',
+ 'HOME': '/Users/mike',
+ 'HTTP_ACCEPT': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+ 'HTTP_ACCEPT_CHARSET': 'ISO-8859-1,utf-8;q=0.7,*;q=0.7',
+ 'HTTP_ACCEPT_ENCODING': 'gzip, deflate',
+ 'HTTP_ACCEPT_LANGUAGE': 'en-us,en;q=0.5',
+ 'HTTP_CONNECTION': 'keep-alive',
+ 'HTTP_COOKIE': '__utma=111872281.487524966.1318805672.1318895784.1318898495.4; __utmz=111872281.1318805672.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none); csrftoken=58d123da7f13d95701bebb3c2c91bf4b; openid_prov=0; sessionid=24bd2ba36adb42fa4624f00fded71ec7',
+ 'HTTP_HOST': 'localhost:8000',
+ 'HTTP_REFERER': 'http://localhost:8000/bingocardlookup/editcard/',
+ 'HTTP_USER_AGENT': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.6; rv:8.0.1) Gecko/20100101 Firefox/8.0.1',
+ 'J2EE_HOME': '/Applications/oc4j_extended_101340/j2ee/home',
+ 'JAVA_HOME': '/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home',
+ 'LANG': 'en_US.UTF-8',
+ 'LOGNAME': 'mike',
+ 'OLDPWD': '/Users/mike/Documents/bingocardlookup',
+ 'ORACLE_HOME': '/Applications/oc4j_extended_101340',
+ 'PATH': '/usr/bin:/opt/local/bin:/opt/local/sbin:/Applications/oc4j_extended_101340/bin:/Applications/oc4j_extended_101340/ant/bin:/usr/local/mysql/bin:/Applications/hadoop-0.20.2/bin:/Applications/pig-0.7.0/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:/usr/X11/bin',
+ 'PATH_INFO': u'/bingocardlookup/logout/',
+ 'PIG_HOME': '/Applications/pig-0.7.0',
+ 'PWD': '/Users/mike/Documents/bingocardlookup/bingocardlookup',
+ 'QUERY_STRING': '',
+ 'REMOTE_ADDR': '127.0.0.1',
+ 'REMOTE_HOST': '',
+ 'REQUEST_METHOD': 'GET',
+ 'RUN_MAIN': 'true',
+ 'SCRIPT_NAME': u'',
+ 'SERVER_NAME': 'localhost',
+ 'SERVER_PORT': '8000',
+ 'SERVER_PROTOCOL': 'HTTP/1.1',
+ 'SERVER_SOFTWARE': 'WSGIServer/0.1 Python/2.6.1',
+ 'SHELL': '/bin/bash',
+ 'SHLVL': '1',
+ 'SSH_AUTH_SOCK': '/tmp/launch-mJw5zg/Listeners',
+ 'TERM': 'xterm-color',
+ 'TERM_PROGRAM': 'Apple_Terminal',
+ 'TERM_PROGRAM_VERSION': '273.1',
+ 'TMPDIR': '/var/folders/L+/L+AWT8FCEjSzxx+iRjYqSU+++TI/-Tmp-/',
+ 'TZ': 'America/Chicago',
+ 'USER': 'mike',
+ 'VERSIONER_PYTHON_PREFER_32_BIT': 'no',
+ 'VERSIONER_PYTHON_VERSION': '2.6',
+ '_': '/usr/bin/python',
+ '__CF_USER_TEXT_ENCODING': '0x1F5:0:0',
+ 'wsgi.errors': <open file '<stderr>', mode 'w' at 0x100416140>,
+ 'wsgi.file_wrapper': <class 'django.core.servers.basehttp.FileWrapper'>,
+ 'wsgi.input': <socket._fileobject object at 0x10281e398>,
+ 'wsgi.multiprocess': False,
+ 'wsgi.multithread': True,
+ 'wsgi.run_once': False,
+ 'wsgi.url_scheme': 'http',
+ 'wsgi.version': (1, 0)}> 
+request.user: mike
+request.user: openiduser
+request.user.id: 3 
+request.method: GET
+userOpenId.claimed_id: https://www.google.com/accounts/o8/id?id=AItOawk0vXcoExRGa5MRSVgG12v-nQ5SLju9UJI
+None
+None
+openid to set: https://www.google.com/accounts/o8/id?id=AItOawk0vXcoExRGa5MRSVgG12v-nQ5SLju9UJI
+bingocard to set: [['4','V','H','Y','4','6','P','W','9','Q'],['T','5','9','3','C','8','9','R','H','H'],['7','J','8','F','2','F','J','1','Y','0'],['8','Y','C','2','D','7','P','V','J','8'],['N','F','C','5','0','P','D','X','8','5']]
+id not set in session, setting now
+bingocard not set in session, setting now
+requested GET for editcard, redirecting
+request.user: openiduser

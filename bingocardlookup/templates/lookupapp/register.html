@@ -2,7 +2,7 @@
 
 {% block title%} Enter Your Grid {% endblock %}
 
-{% block pageheader %} {% if bingocard %} Edit {% else %} Register {% endif %} your grid card. {% endblock %}
+{% block pageheader %} {% if request.session.bingocard %} Edit {% else %} Register {% endif %} your grid card. {% endblock %}
 
 {% block content %}
 
@@ -99,12 +99,12 @@
   </tr>
   </tbody>
 </table>
-{% if bingocard %} 
-  <input type="hidden" name="grid" id="grid" value="{{ bingocard.grid }}" /> 
+{% if request.session.bingocard %} 
+  <input type="hidden" name="grid" id="grid" value="{{ request.session.bingocard.grid }}" /> 
 {% else %}
   <input type="hidden" name="grid" id="grid"/>
 {% endif %}
-<input type="hidden" name="openid" id="openid" value="{{ id }}"/>
+<input type="hidden" name="openid" id="openid" value="{{ request.session.id }}"/>
 <input type="button" class="btn large primary" id="save" value="Save" style="width: 150px; height: 50px; float:right; margin-right: 3px;"/>
 <span id="alert" class="error"></span>
 </p>
